@@ -49,12 +49,29 @@ package com.omarfouad.application
 			traceAll();
 		}
 		
+		/**
+		 * Sets the build number to 0; 
+		 */		
+		public function resetBuild():void 
+		{
+			initialBuildNumber(0);
+		}
+		
+		/**
+		 * Sets the build number to the parameter <code>val</code>
+		 * @param val Specifies the initial build number.
+		 */		
+		public function initialBuildNumber(val:int):void 
+		{
+			buildNumber = val;
+			so.data.build = val;
+		}
+		
 		private function setBuildNumber():void 
 		{
 			so = SharedObject.getLocal(appName + "SO");
-			if(so.data.build == null) {
-				so.data.build = 0;
-			}
+			so.data.build ||= 0;
+			
 			so.data.build++;
 			buildNumber = so.data.build;
 			so.flush();
