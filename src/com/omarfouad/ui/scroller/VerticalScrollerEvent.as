@@ -19,7 +19,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE. 
 */ 
 
-package com.omarfouad.scroller {
+package com.omarfouad.ui.scroller {
 	
 	import flash.events.Event;
 	

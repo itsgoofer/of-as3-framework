@@ -19,7 +19,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE. 
 */
 
-package com.omarfouad.scroller {
+package com.omarfouad.ui.scroller {
 	
 	import flash.display.DisplayObject;
 	import flash.display.Sprite;
@@ -28,12 +28,12 @@ package com.omarfouad.scroller {
 	/**
 	 * @eventType com.omarfouad.scroller.ScrollBarEvent.SCROLL_START
 	 */ 
-	[Event(name="scrollStart", type="com.omarfouad.scroller.VerticalScrollerEvent")]
+	[Event(name="scrollStart", type="com.omarfouad.ui.scroller.VerticalScrollerEvent")]
 	
 	/** 
 	 * @eventType com.omarfouad.scroller.ScrollerEvent.SCROLL_STOP
 	 */ 
-	[Event(name="scrollStop", type="com.omarfouad.scroller.VerticalScrollerEvent")]
+	[Event(name="scrollStop", type="com.omarfouad.ui.scroller.VerticalScrollerEvent")]
 	
 	
 	public class VerticalScroller extends Sprite {
