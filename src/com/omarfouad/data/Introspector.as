@@ -26,13 +26,13 @@ package com.omarfouad.data
 	
 	/**
 	 * The Introspector class fills a Value Object class with the given object.  
-	 * @author omarf
+	 * @author Omar Fouad
 	 */	
 	public class Introspector 
 	{
 		
 		/**
-		 * Assign the the values of the properties of the given object to the 
+		 * Assigns the the values of the properties of the given object to the 
 		 * values (that have the same name) of the properties
 		 * of the given Value Object.
 		 * 
