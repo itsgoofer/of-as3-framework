@@ -1,0 +1,12 @@
+# hidden files
+.DS_Store
+.actionScriptProperties
+.flexLibProperties
+.git
+.project
+.settings
+.FlexUnitSettings
+bin/*.swf
+bin/*.xml
+bin-debug
+report
