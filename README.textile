@@ -1,1 +1,0 @@
-A Generic AS3 Framework.
