@@ -128,26 +128,5 @@ package com.omarfouad.utils
 		
 		public function DateUtils() {}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 }
