@@ -23,7 +23,7 @@ package com.omarfouad.utils
 {
 	
 	/**
-	 * <b>Version 1.0b</b> <br/><br/>
+	 * <b>Version 1.1b</b> <br/><br/>
 	 * The DateUtils Class provides functions and constants 
 	 * to manipulate dates.
 	 */	
@@ -124,6 +124,32 @@ package com.omarfouad.utils
 		public static function diffInDays(date:Date):Number 
 		{
 			return Math.round((date.valueOf() - new Date().valueOf()) / DAY_MILL);
+		}
+		
+		/**
+		 * <p>Returns the time difference between the two parameters 
+		 * <code>date1</code> and <code>date2</code> converted to the
+		 * time unit specified in the <code>timeUnit</code> parameter.</p>
+		 * Compatible units are defined in the <b>TimeUnit</b> Class.
+		 * 
+		 * @param date1 A <code>Date</code> object.
+		 * @param date2 A <code>Date</code> object.
+		 * @param timeUnit A String. What time unit the difference is converted to.
+		 * @return The difference between the two dates.
+		 * 
+		 */		
+		public static function dateDifference(date1:Date, date2:Date, timeUnit:String):Number 
+		{
+			var diff:Number;
+			switch(timeUnit)
+			{
+				case "days": diff = Math.round((date1.valueOf() - date2.valueOf()) / DAY_MILL); break;
+				case "hours": diff = Math.round((date1.valueOf() - date2.valueOf()) / HOUR_MILL); break;
+				case "minutes": diff = Math.round((date1.valueOf() - date2.valueOf()) / MINUTE_MILL); break;
+				case "seconds": diff = Math.round((date1.valueOf() - date2.valueOf()) / SECOND_MILL); break;
+				case "milliseconds": diff = Math.round((date1.valueOf() - date2.valueOf())); break;
+			}
+			return diff < 0 ? -diff : diff;
 		}
 		
 		public function DateUtils() {}
