@@ -95,7 +95,6 @@ package com.omarfouad.utils
 		 * @param date2 A <code>Date</code> object.
 		 * @param timeUnit A String. What time unit the difference is converted to.
 		 * @return The difference between the two dates.
-		 * 
 		 */		
 		public static function dateDiff(date1:Date, date2:Date, timeUnit:String):Number 
 		{
@@ -114,8 +113,7 @@ package com.omarfouad.utils
 		/**
 		 * Converts the given milliseconds into a <b>hh:mm:ss</b> clock format.
 		 * @param milliseconds
-		 * @return a String.
-		 * 
+		 * @return a String
 		 */		
 		public static function toClockFormat(milliseconds:Number):String 
 		{
