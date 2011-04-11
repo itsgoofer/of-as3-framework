@@ -120,9 +120,9 @@ package com.omarfouad.utils
 			
 			var hh:Number = Math.floor(seconds / 3600);
 			var mm:Number = Math.floor((seconds % 3600) / 60);
-			var ss:Number = seconds % 3600 % 60;
+			var ss:Number = Math.floor(seconds % 3600 % 60);
 			
-			var cf:String = String(hh < 10 ? "0" + hh : hh) + ":" + String(mm < 10 ? "0" + mm : mm) + ":" + String(ss < 10 ? "0" + ss : ss);
+			var cf:String = String((hh < 10 ? "0" + hh : hh) + ":" + (mm < 10 ? "0" + mm : mm) + ":" + (ss < 10 ? "0" + ss : ss));
 			
 			return cf;
 		}
