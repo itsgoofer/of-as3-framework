@@ -23,7 +23,6 @@ package com.omarfouad.utils
 {
 	
 	/**
-	 * <b>Version 1.1b</b> <br/><br/>
 	 * The DateUtils Class provides functions and constants 
 	 * to manipulate dates.
 	 */	
