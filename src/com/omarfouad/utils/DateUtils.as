@@ -152,7 +152,10 @@ package com.omarfouad.utils
 			return diff < 0 ? -diff : diff;
 		}
 		
-		public function DateUtils() {}
+		public function DateUtils() 
+		{
+			throw new Error("The DateUtils Class cannot be instantiated.");
+		}
 		
 	}
 }

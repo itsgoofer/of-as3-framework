@@ -37,7 +37,7 @@ package com.omarfouad.utils
 		
 		public function TimeUnit()
 		{
-			throw new Error("The TimeUnit class cannot be instantiated");
+			throw new Error("The TimeUnit class cannot be instantiated.");
 		}
 	}
 }
