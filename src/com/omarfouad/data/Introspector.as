@@ -32,9 +32,9 @@ package com.omarfouad.data
 	{
 		
 		/**
-		 * Assigns the the values of the properties of the given object to the 
+		 * Assigns the values of the properties of the given <b>object</b> to the 
 		 * values (that have the same name) of the properties
-		 * of the given Value Object.
+		 * of the given <b>Value Object</b>.
 		 * 
 		 * @param object The raw object.
 		 * @param vo The VO.
