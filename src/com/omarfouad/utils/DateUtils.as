@@ -60,70 +60,29 @@ package com.omarfouad.utils
 		 */		
 		public static const SECOND_MILL:Number = 1000;
 		
-		
 		/**
-		 * Returns the difference between the date specified and the current date
-		 * <b>in milliseconds</b>.
+		 * <p>Returns the difference between the date specified and the current date
+		 * converted to the timeUnit specified to the <code>timeUnit</code> parameter.</p>
+		 * Compatible units are defined in the <b>TimeUnit</b> Class.
+		 * 
 		 * If the returned number is negative, the date passed in the parameter is before now.
 		 * If it is a positive number, the date passed in the parameter is yet to come.
 		 * 
-		 * @param date The date compared to now.
-		 */		
-		public static function diffInMilliseconds(date:Date):Number 
+		 * @param date The Date compared to now.
+		 * @param timeUnit The unit of time used for conversion.
+		 */
+		public static function nowDiff(date:Date, timeUnit:String):Number 
 		{
-			return date.valueOf() - new Date().valueOf();
-		}
-		
-		/**
-		 * Returns the difference between the date specified and the current date
-		 * <b>in seconds</b>.
-		 * If the returned number is negative, the date passed in the parameter is before now.
-		 * If it is a positive number, the date passed in the parameter is yet to come.
-		 * 
-		 * @param date The date compared to now.
-		 */	
-		public static function diffInSeconds(date:Date):Number 
-		{
-			return Math.round((date.valueOf() - new Date().valueOf()) / SECOND_MILL);
-		}
-		
-		/**
-		 * Returns the difference between the date specified and the current date
-		 * <b>in minutes</b>.
-		 * If the returned number is negative, the date passed in the parameter is before now.
-		 * If it is a positive number, the date passed in the parameter is yet to come.
-		 * 
-		 * @param date The date compared to now.
-		 */	
-		public static function diffInMinute(date:Date):Number 
-		{
-			return Math.round((date.valueOf() - new Date().valueOf()) / MINUTE_MILL);
-		}
-		
-		/**
-		 * Returns the difference between the date specified and the current date
-		 * <b>in hours</b>.
-		 * If the returned number is negative, the date passed in the parameter is before now.
-		 * If it is a positive number, the date passed in the parameter is yet to come.
-		 * 
-		 * @param date The date compared to now.
-		 */	
-		public static function diffInHours(date:Date):Number 
-		{
-			return Math.round((date.valueOf() - new Date().valueOf()) / HOUR_MILL);
-		}
-		
-		/**
-		 * Returns the difference between the date specified and the current date
-		 * <b>in days</b>.
-		 * If the returned number is negative, the date passed in the parameter is before now.
-		 * If it is a positive number, the date passed in the parameter is yet to come.
-		 * 
-		 * @param date The date compared to now.
-		 */	
-		public static function diffInDays(date:Date):Number 
-		{
-			return Math.round((date.valueOf() - new Date().valueOf()) / DAY_MILL);
+			var diff:Number;
+			switch(timeUnit) {
+				case "days": diff = (date.valueOf() - new Date().valueOf()) / DAY_MILL; break;
+				case "hours": diff = (date.valueOf() - new Date().valueOf()) / HOUR_MILL; break;
+				case "minutes": diff = (date.valueOf() - new Date().valueOf()) / MINUTE_MILL; break;
+				case "seconds": diff = (date.valueOf() - new Date().valueOf()) / SECOND_MILL; break;
+				case "milliseconds": diff = (date.valueOf() - new Date().valueOf()); break;
+			}
+			
+			return diff;
 		}
 		
 		/**
@@ -138,7 +97,7 @@ package com.omarfouad.utils
 		 * @return The difference between the two dates.
 		 * 
 		 */		
-		public static function dateDifference(date1:Date, date2:Date, timeUnit:String):Number 
+		public static function dateDiff(date1:Date, date2:Date, timeUnit:String):Number 
 		{
 			var diff:Number;
 			switch(timeUnit)
@@ -150,6 +109,25 @@ package com.omarfouad.utils
 				case "milliseconds": diff = Math.round((date1.valueOf() - date2.valueOf())); break;
 			}
 			return diff < 0 ? -diff : diff;
+		}
+		
+		/**
+		 * Converts the given milliseconds into a <b>hh:mm:ss</b> clock format.
+		 * @param milliseconds
+		 * @return a String.
+		 * 
+		 */		
+		public static function toClockFormat(milliseconds:Number):String 
+		{
+			var seconds:Number = milliseconds / 1000;
+			
+			var hh:Number = Math.floor(seconds / 3600);
+			var mm:Number = Math.floor((seconds % 3600) / 60);
+			var ss:Number = seconds % 3600 % 60;
+			
+			var cf:String = String(hh < 10 ? "0" + hh : hh) + ":" + String(mm < 10 ? "0" + mm : mm) + ":" + String(ss < 10 ? "0" + ss : ss);
+			
+			return cf;
 		}
 		
 		public function DateUtils() 
