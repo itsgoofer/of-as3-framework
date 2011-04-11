@@ -110,6 +110,24 @@ package com.omarfouad.utils
 			return diff < 0 ? -diff : diff;
 		}
 		
+		/**
+		 * Converts the given milliseconds into a <b>hh:mm:ss</b> clock format.
+		 * @param milliseconds
+		 * @return a String
+		 */		
+		public static function toClockFormat(milliseconds:Number):String 
+		{
+			var seconds:Number = milliseconds / 1000;
+			
+			var hh:Number = Math.floor(seconds / 3600);
+			var mm:Number = Math.floor((seconds % 3600) / 60);
+			var ss:Number = seconds % 3600 % 60;
+			
+			var cf:String = String(hh < 10 ? "0" + hh : hh) + ":" + String(mm < 10 ? "0" + mm : mm) + ":" + String(ss < 10 ? "0" + ss : ss);
+			
+			return cf;
+		}
+		
 		public function DateUtils() 
 		{
 			throw new Error("The DateUtils Class cannot be instantiated.");
